@@ -12,3 +12,5 @@ try {
   console.error("Startup failed ❌", error);
   process.exit(1);
 }
+
+
