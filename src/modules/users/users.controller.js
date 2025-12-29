@@ -108,7 +108,7 @@ export const createUser1 = (req, res) => {
 
 // ✅ route handler: create a new user in the database
 export const createUser2 = async (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, email, password, role } = req.body;
 
   if (!username || !email || !password) {
     return res.status(400).json({
@@ -118,7 +118,7 @@ export const createUser2 = async (req, res) => {
   }
 
   try {
-    const doc = await User.create({ username, email, password });
+    const doc = await User.create({ username, email, password, role });
 
     const safe = doc.toObject();
     delete safe.password;
