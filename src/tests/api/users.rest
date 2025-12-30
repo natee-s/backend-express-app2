@@ -8,7 +8,8 @@ Content-Type: application/json
 {
     "username": "ABC",
     "email": "abc@example.com",
-    "password": "pass123"
+    "password": "pass123",
+    "role": "admin"
 }
 
 ### DELETE request to delete a user

@@ -16,6 +16,10 @@ origin: [
 app.use(cors(corsOptions));
 app.use(express.json());
 
+app.get("/",(req,res)=>{
+    res.sent("Hello world")
+})
+
 app.use("/api",apiRouter)
 
 // catch-all for 404 Not Found
