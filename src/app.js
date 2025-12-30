@@ -20,7 +20,7 @@ app.use("/api",apiRouter)
 
 // catch-all for 404 Not Found
 app.use((res, req, next) => {
-    new Error(`Not found:${req.method}${req.originalURL}`)
+    const error = new Error(`Not found:${req.method}${req.originalURL}`)
     error.name = "NotFoundError"
     error.status = 404
     next(error)
@@ -35,6 +35,6 @@ app.use((err, req, res, next) => {
         path: req.originalUrl,
         method: req.method,
         timestamp: new Date().toISOString(),
-        stack: err.sstack,
+        stack: err.stack,
     });
 });
